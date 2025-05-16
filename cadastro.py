@@ -46,20 +46,22 @@ while True:
     print("=" * 30)
     opcao = int(input("digite uma opção: "))
     print("=" * 30)
-    if opcao == 1:
-        nome = str(input("digite o nome: "))
-        email = str(input("digite o email: "))
-        adicionar(nome,email)
+    match opcao:
 
-    elif opcao == 2:
-        escolha = int(input("digite o id que deseja apagar: "))
-        excluir("usuarios",escolha)
+        case 1:
+            nome = str(input("digite o nome: "))
+            email = str(input("digite o email: "))
+            adicionar(nome,email)
 
-    elif opcao == 3:
-        vertabela()
+        case 2:
+            escolha = int(input("digite o id que deseja apagar: "))
+            excluir("usuarios",escolha)
 
-    elif opcao == 4:
-        print("saindo...")
-        break
-    elif opcao < 0 or opcao > 4 :
-        print("ERRO.OPÇÃO INVALIDA")
+        case 3:
+            vertabela()
+
+        case 4:
+            print("saindo...")
+            break
+        case _:
+            print("ERRO.OPÇÃO INVALIDA")
